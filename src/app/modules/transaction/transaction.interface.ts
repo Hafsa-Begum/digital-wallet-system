@@ -12,7 +12,7 @@ export enum Status{
     COMPLETED = 'COMPLETED',
     REVERSED = 'REVERSED'
 }
-export interface Transaction{
+export interface ITransaction{
     //'add', 'withdraw', 'send', 'cash-in', 'cash-out'
     type: Type;
     from: Types.ObjectId;

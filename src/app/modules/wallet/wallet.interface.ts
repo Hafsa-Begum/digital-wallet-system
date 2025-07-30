@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-export interface Wallet{
+export interface IWallet{
     user: Types.ObjectId;
     balance: number;
     isBlocked: boolean;

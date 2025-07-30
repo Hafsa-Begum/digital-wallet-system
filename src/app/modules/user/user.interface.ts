@@ -9,7 +9,7 @@ export enum Role {
 export interface IUser {
     name: string;
     phone: string;
-    password?: string;
+    password: string;
     email?: string;
     picture?: string;
     address?: string;
