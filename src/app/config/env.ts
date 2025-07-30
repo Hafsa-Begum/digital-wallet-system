@@ -6,10 +6,16 @@ interface EnvConfig {
     PORT: string,
     DB_URL: string,
     NODE_ENV: "dev" | "prod"
+    BCRYPT_SALT_ROUND: string,
+    ADMIN_PHONE: string,
+    ADMIN_PASSWORD: string,
+    JWT_ACCESS_EXPIRES: string,
+    JWT_ACCESS_SECRET: string,
 }
 
 const loadEnvVariables = (): EnvConfig => {
-    const requiredEnvVariables: string[] = ["PORT", "DB_URL", "NODE_ENV"];
+    const requiredEnvVariables: string[] = ["PORT", "DB_URL", "NODE_ENV", "BCRYPT_SALT_ROUND", "ADMIN_PHONE",
+    "ADMIN_PASSWORD", "JWT_ACCESS_EXPIRES", "JWT_ACCESS_SECRET"];
 
     requiredEnvVariables.forEach(key => {
         if (!process.env[key]) {
@@ -21,7 +27,12 @@ const loadEnvVariables = (): EnvConfig => {
         PORT: process.env.PORT as string,
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         DB_URL: process.env.DB_URL!,
-        NODE_ENV: process.env.NODE_ENV as "dev" | "prod"
+        NODE_ENV: process.env.NODE_ENV as "dev" | "prod",
+        BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
+        ADMIN_PHONE: process.env.ADMIN_PHONE as string,
+        ADMIN_PASSWORD: process.env.ADMIN_PASSWORD as string,
+        JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,
+        JWT_ACCESS_EXPIRES: process.env.JWT_ACCESS_EXPIRES as string,
     }
 }
 

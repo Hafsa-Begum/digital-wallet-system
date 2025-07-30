@@ -17,6 +17,6 @@ export interface IUser {
     isBlocked?: boolean;
     isApproved?: boolean;
     role: Role;
-    wallet: Types.ObjectId;
+    wallet?: Types.ObjectId;
     transactions?: Types.ObjectId[];
 }
