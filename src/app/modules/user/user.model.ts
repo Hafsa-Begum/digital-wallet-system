@@ -8,13 +8,15 @@ const userSchema = new Schema<IUser>({
     email: { type: String},
     role: {
         type: String,
+        uppercase: true,
         enum: Object.values(Role),
         default: Role.USER
     },
     picture: { type: String },
     address: { type: String },
     isDeleted: { type: Boolean, default: false },
-    isApproved: { type: Boolean, default: true },
+    //for maintaining approved/suspended agent
+    isApproved: { type: Boolean, default: false },
     isBlocked: { type: Boolean, default: false },
     wallet: {
         type: Schema.Types.ObjectId, 

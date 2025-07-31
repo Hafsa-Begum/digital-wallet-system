@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { IWallet } from "./wallet.interface";
+import { AmountType, IWallet } from "./wallet.interface";
 
 const walletSchema = new Schema<IWallet>({
     user: {
@@ -10,6 +10,13 @@ const walletSchema = new Schema<IWallet>({
         type: Number,
         default: 50,
         min: 0
+    },
+    amountType: {type: String,
+        enum: Object.values(AmountType)
+    },
+    amount: {
+        type: Number,
+        min: 50
     },
     isBlocked: {
         type: Boolean,

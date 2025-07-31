@@ -15,10 +15,12 @@ export enum Status{
 export interface ITransaction{
     //'add', 'withdraw', 'send', 'cash-in', 'cash-out'
     type: Type;
-    from: Types.ObjectId;
-    to: Types.ObjectId;
+    from: String;
+    to: String;
     amount: number;
+    //apply to user send, cash-out, 
     fee: number;
+    //apply to agent cash-in,
     comission: number;
     status: Status
 }

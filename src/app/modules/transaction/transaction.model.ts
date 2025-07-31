@@ -8,12 +8,10 @@ const transactionSchema = new Schema<ITransaction>({
         default: Type.ADD
     },
     from: {
-        type: Schema.Types.ObjectId, 
-        ref: 'User'
+        type: String
     },
     to: {
-        type: Schema.Types.ObjectId, 
-        ref: 'User'
+        type: String
     },
     amount:{
         type: Number,

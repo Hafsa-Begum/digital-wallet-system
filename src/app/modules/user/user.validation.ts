@@ -34,5 +34,22 @@ export const createUserZodSchema = z.object({
     address: z
         .string({ error: "Address must be string" })
         .max(200, { message: "Address cannot exceed 200 characters." })
+        .optional(),
+        // .enum(["ADMIN","USER", "AGENT"])
+    role: z
+        .enum(Object.values(Role) as [string])
+        .optional(),
+    isApproved: z
+        .boolean({ error: "isApproved must be true or false" })
+        .optional(),
+    isDeleted: z
+        .boolean({ error: "isDeleted must be true or false" })
+        .optional(),
+    isBlocked: z
+        .boolean({ error: "isBlocked must be true or false" })
+        .optional(),
+    address: z
+        .string({ error: "Address must be string" })
+        .max(200, { message: "Address cannot exceed 200 characters." })
         .optional()
 })
